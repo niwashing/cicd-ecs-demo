@@ -1,0 +1,11 @@
+name: runner-demo
+on: [workflow_dispatch, push]
+
+jobs:
+  hello:
+    runs-on: [self-hosted, ecs-mi, demo]
+    steps:
+      - name: Show host
+        run: echo "Running on $(hostname)"
+      - name: Simulate work
+        run: sleep 30
